@@ -191,7 +191,7 @@ namespace ShowMeChords
                 
                 for (int i = 0; i < ChordsBase.Count; i++)
                 {
-                    if (msg.Text.ToLower() == ChordsBase[i].getName().ToLower())//приводим к нижнему регистру и сообщение и имя в базе и сравниваем 
+                    if (msg.Text.Equals(ChordsBase[i].getName(), StringComparison.OrdinalIgnoreCase))//приводим к нижнему регистру и сообщение и имя в базе и сравниваем 
                     {
                         
                         await client.SendTextMessageAsync(msg.Chat.Id, ChordsBase[i].getName() + "\n" + ChordsBase[i].getAbout(),replyToMessageId:msg.MessageId);
